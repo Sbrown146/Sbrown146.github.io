@@ -34,7 +34,8 @@ body {
 
 /* Landing Page */
 .home-inner {
-    background-image: url("file:///C:/Sbrown146.github.io/Portfolio/Olympic.jpg");
+    /*background-image: url("file:///C:/Sbrown146.github.io/Portfolio/Olympic.jpg");*/
+    background-image: url("Olympic");
     height: 600px;
     background-size: 100% 100%;
     background-position: center;
