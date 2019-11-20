@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ScottBrown146</title>
+    <link rel="stylesheet" href="C:\MainRep\Sbrown146.github.io\bootstrap-4.1.3-dist\css\bootstrap.min.css">
+    <link rel="stylesheet" href="style.css"
+    <link rel="stylesheet" href="C:\MainRep\Sbrown146.github.io\css\fixed.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+</head>
+
+<body data-spy="scroll" data-target="#navbarResponsive">
+
+<!--Start Home Section-->
+<div id="home">
+
+<!--Navigation-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <a class="navbar-brand" href="file:///C:/MainRep/Sbrown146.github.io/index.html"><img src="C:\MainRep\Sbrown146.github.io\SC crest.png" width="30" height="30" alt=""></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="file:///C:/MainRep/Sbrown146.github.io/index.html">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="C:/MainRep/Sbrown146.github.io/index.html#about">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="C:/MainRep/Sbrown146.github.io/Portfolio/index.html">Portfolio</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="C:/MainRep/Sbrown146.github.io/Experience/index.html">Experience</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="C:/MainRep/Sbrown146.github.io/index.html#about">Contact</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<!--End Navigation-->
+
+<!--Start Landing Page Section-->
+<div class="landing">
+    <div class="home-wrap">
+        <div class="home-inner">
+        </div>
+    </div>
+</div>
+
+<div class="caption b1 text-center">
+    <h1><strong>Beer Sales </br>Time Series Anaylsis </br>Current Project</strong></h1>
+    <h3>This is a data set of 192 months of Beer sales.</br>This data set will be tested with R through Postgres using:</br></h3>
+    <ul>
+        <li>Holt-Winters Exponential Smoothing</li>
+        <li>Arima Analysis</li>
+        <li>Fast Fourier Transformation</li>
+    </ul>
+    <p>Download:</p>
+    <a class="btn btn1 btn-outline-light btn-lg" target="_blank" href="beersales_months.csv" download="Data Set">Data Set</a>
+    <a class="btn btn2 btn-outline-light btn-lg" target="_blank" href="HW Final R code.txt" download="R Code">R Code</a></br>
+    <!-- <a href="https://github.com/Sbrown146" target="_blank"><i class="fab fa-github-square"></i></a>
+    <a href="https://www.linkedin.com/in/scott-brown-9a6005183" target="_blank"<i class="fab fa-linkedin" aria-hidden="true"></i></a> -->
+</div>
+<!--End Landing Page Section-->
+
+<!--End Home Section-->
+
+<!--Start About Section-->
+<div id="about" class="offset">
+
+<!--Start Jumbotron-->
+<div class="jumbotron">
+    <div class="row">
+        <div class="col-md-6 HWcoeff text-left">
+            <h1><strong>Splitting for Train and Test data sets</strong></h1>
+            <p>After splitting the data using the first 180 months as the train data, a Holt-Winters model is created with the following parameters:
+            <ul>
+                <li>alpha=0.110466</li>
+                <li>beta=0</li>
+                <li>gamma=0.6102043 </li>
+            </ul>
+            <p>The Holt-Winters model forecasts for the last 12 months were not inline with the original last 12 months of the data set so further testing of the data set using ARIMA and FFT will be down in the future.</p>
+        </div>
+        <div class="col-md-6 OGdata text-left">
+            <h1><strong>Plot for Total Beer Sales</strong></h1>
+            <img src="Beer_plot.png" height="400" width="600">
+        </div>
+        </div>
+    </div>
+</div>
+
+<!--End Jumbotron-->
+
+<div class="jumbotron">
+    <div class="row">
+        <div class="col-md-12 HWcomp text-center">
+            <h1><strong>Holt-Winters Compontents</strong></h1>
+            <p>A breakdown of the observed, trend, seasonal and random elements of the first 180 data points. Data is additive.</p>
+            <img src="First 180 HW Components.png">
+        </div>
+    </div>
+</div>
+
+<div class="jumbotron">
+    <div class="row">
+        <div class="col-md-12 HWplot text-center">
+            <h1><strong>Holt-Winters Fit Plot</strong></h1>
+            <img src="HW fitted with Gamma, Beta.png">
+        </div>
+    </div>
+</div>
+
+<div class="jumbotron">
+    <h1 style="margin-bottom:30px;"><strong><center>Look into ARIMA Parameters for Model Analysis</center></strong></h1>
+        <div class="row">
+            <div class="col-md-6 TrainACF text-center">
+                <h2><strong>Train Data ACF</strong></h2>
+                <img src="First 180 Observations ACF.png" height="600" width="600">
+            </div>
+            <div class="col-md-6 TrainPACF text-center">
+                <h2><strong>Train Data PACF</strong> </h2>
+                <img src="First 180 Observations PACF.png" height="600" width="600">
+            </div>
+            </div>
+        </div>
+
+<div class="jumbotron">
+    <div class="row">
+        <div class="col-md-12 ARIMAdiff text-center">
+            <h1><strong>A Look to See if First Differencing is Needed</strong></h1>
+            <img src="First Differences for First 180 Observations.png" height="600" width="600">
+        </div>
+    </div>
+</div>
+
+<div class="jumbotron">
+    <h1 style="margin-bottom:30px;"><strong><center>An Arima Model of (12,1,4) Is Tested</center></strong></h1>
+        <div class="row">
+            <div class="col-md-6 ARIMAforecast text-center">
+                <h2><strong>(12,1,4) Model Forecast</strong></h2>
+                <img src="(12,1,4) Forecasts.png" height="600" width="600">
+            </div>
+            <div class="col-md-6 ARIMAfit text-center">
+                <h2><strong>(12,1,4) Model Fit Against the Original Data</strong> </h2>
+                <img src="Fitted (12,1,4) vs Original Data.png" height="600" width="600">
+            </div>
+            </div>
+        </div>
+
+    </div>
+
+<script src="C:/MainRep/Sbrown146.github.io/js/jquery-3.3.1.min.js"></script>
+<script src="C:/MainRep/Sbrown146.github.io/bootstrap-4.1.3-dist/js/bootstrap.min.js"></script>
+<script src="https://use.fontawesome.com/releases/v5.5.0/js/all/js"></script>
+
+</body>
+</html>

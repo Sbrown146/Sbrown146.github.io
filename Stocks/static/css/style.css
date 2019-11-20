@@ -1,0 +1,37 @@
+.date {
+    margin-top:10px;
+}
+
+th, td {
+    text-align: center;
+    padding: 2px;
+}
+
+tbody>tr:nth-child(even){
+    background-color: #f2f2f2 !important;
+}
+
+tbody>tr:nth-child(odd){
+    background-color: #fff !important;
+}
+
+#plot_guage {
+    max-height: calc(200px + 30px) !important;
+    overflow:hidden;
+    /* background: rgba(0,0,0,0); */
+    /* enable-background: 0px; Figure this out later....*/  
+}
+
+.form-control{
+    margin-top: -15px;
+    margin-bottom: 5px;
+    width: 75%;
+}
+
+#alert{
+    background-color: #7dae94;
+}
+
+#bad_alert{
+    background-color:#FFA5A5;
+}

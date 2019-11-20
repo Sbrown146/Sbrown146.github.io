@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ScottBrown146</title>
+    <link rel="stylesheet" href="C:\MainRep\Sbrown146.github.io\bootstrap-4.1.3-dist\css\bootstrap.min.css">
+    <link rel="stylesheet" href="style.css"
+    <link rel="stylesheet" href="C:\MainRep\Sbrown146.github.io\css\fixed.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+</head>
+
+<body data-spy="scroll" data-target="#navbarResponsive">
+
+<!--Start Home Section-->
+<div id="home">
+
+<!--Navigation-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <a class="navbar-brand" href="Sbrown146.github.io/index.html"><img src="C:\MainRep\Sbrown146.github.io\SC crest.png" width="30" height="30" alt=""></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="Sbrown146.github.io/index.html">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="Sbrown146.github.io/index.html#about">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="Sbrown146.github.io/Portfolio/index.html">Portfolio</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="Sbrown146.github.io/Experience/index.html">Experience</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="Sbrown146.github.io/index.html#about">Contact</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<!--End Navigation-->
+
+<!--Start Landing Page Section-->
+<div class="landing">
+    <div class="home-wrap">
+        <div class="home-inner">
+        </div>
+    </div>
+</div>
+
+<div class="caption b2 text-center">
+    <h1><strong>2016 Florida Tax Returns </br>Comprehensive Analysis </br>Completed Project 2019</strong></h1>
+    <h3>This is the tax returns for the State of Florida from 2016 provided by the US Treasury.</br>This data set is analyized using Python and the many libraries available within it</br>to determine many different aspects regarding tax brackets and information.</h3>
+    <p>Download:</p>
+    <a class="btn btn1 btn-outline-light btn-lg" target="_blank" href="Resources/16zp10fl.xls" download="Data Set">Data Set</a>
+    <a class="btn btn2 btn-outline-light btn-lg" href="Project Data Final Code Template.ipynb" download="Python Code">Python Code</a>
+    <a class="btn btn3 btn-outline-light btn-lg" target="_blank" href="Florida_cities.html">Formatted HTML Data Set</a>
+    <a class="btn btn4 btn-outline-light btn-lg" target="_blank" href="UCF Data analytics and visualization bootcamp Final.pptx" download="Powerpint">PowerPoint</a>
+    <a href="https://github.com/Sbrown146" target="_blank"><i class="fab fa-github-square"></i></a>
+    <a href="https://www.linkedin.com/in/scott-brown-9a6005183" target="_blank"<i class="fab fa-linkedin" aria-hidden="true"></i></a>
+</div>
+<!--End Landing Page Section-->
+
+<!--End Home Section-->
+
+<!--Start About Section-->
+<div id="about" class="offset">
+
+<!-- Start Jumbotron-->
+<!-- <div class="jumbotron">
+    <div class="row">
+        <div class="col-md-6 HWcoeff text-left">
+            <h1><strong>Splitting for Train and Test data sets</strong></h1>
+            <p>After splitting the data using the first 180 months as the train data, a Holt-Winters model is created with the following parameters:
+            <ul>
+                <li>alpha=0.110466</li>
+                <li>beta=0</li>
+                <li>gamma=0.6102043 </li>
+            </ul>
+            <p>The Holt-Winters model forecasts for the last 12 months were not inline with the original last 12 months of the data set so further testing of the data set using ARIMA and FFT will be down in the future.</p>
+        </div>
+        <div class="col-md-6 HWcomppic text-left">
+            <h1><strong>HW Fit Line with First 180 Data Points</strong></h1>
+            <img src="HW fitted with Gamma, Beta.png" height="400" width="400">
+        </div>
+        </div>
+    </div>
+</div> -->
+
+<!--End Jumbotron-->
+
+<div class="jumbotron">
+    <div class="row">
+        <div class="col-md-12 TaxTitle text-left">
+            <h1><strong>In This Project, The Following Questions were Answered Regarding Tax Data for Florida:</strong></h1>
+            <ul>
+                <li>Where where the bulk of individuals living for the lower, middle and upper income brackets?</li>
+                <li>Which cities had the most retirement returns and brought in the most retirement income?</li>
+                <li>Which cities paid the most taxes?</li>
+                <li>Which bracket is paying the most in taxes?</li>
+                <li>What is the ratio of total income to taxable income across each bracket?</li>
+                <li>Which variables are statistically significant when it comes to taxable income?</li>
+            </ul>
+            <p>The following is a brief synopsis of the answers to some of these questions.</p>
+        </div>
+    </div>
+</div>
+
+<div class="jumbotron">
+        <div class="row">
+            <div class="col-md-12 Heat text-center">
+                <h1><strong>These Heat Maps Display the Tax Bracket Areas for Florida</strong></h1>
+                <p><strong>The Lower Bracket: Under $25,000</strong></p>
+                <img src="Graphs/Question 1 Lower Income Heat Map.png"></br></br></br>
+                <p><strong>The Middle Bracket: $25,000 < $100,000</strong></p>
+                <img src="Graphs/Question 2 Middle Income Heat Map.png"></br></br></br>
+                <p><strong>The Upper Bracket: Over $100,000</strong></p>
+                <img src="Graphs/Question 3 Upper Income Heat Map.png">
+            </div>
+        </div>
+    </div>
+
+<div class="jumbotron">
+    <div class="row">
+        <div class="col-md-12 Retire text-center">
+            <h1><strong>Retirment Returns and Income Breakdown</strong></h1>
+            <img src="Graphs/Question 4 and 5 on one graph - Retirement income and returns.png" height="1000" width="1300"></br></br></br>
+        </div>
+    </div>
+</div>
+
+<div class="jumbotron">
+    <div class="row">
+        <div class="col-md-12 Retirepie text-center">
+            <h1><strong>Retirement Income Breakdown for Top 6 Retirement Cities</strong></h1>
+            <img src="Graphs/Question 8 - All in one graph - Retirement breakdown Top 5 cities.png" height="1300" width="1300"></br></br></br>
+        </div>
+    </div>
+</div>
+
+<div class="jumbotron">
+    <div class="row">
+        <div class="col-md-12 Topcites text-center">
+            <h1><strong>Tax Bracket Breakdown</strong></h1>
+            <img src="Tables/Tax Bracket Breakdown.jpg"></br></br></br>
+        </div>
+    </div>
+</div>
+
+<div class="jumbotron">
+    <div class="row">
+        <div class="col-md-12 Taxpie text-center">
+            <h1><strong>Who is Paying the Taxes?</strong></h1>
+            <img src="Graphs/Question 12 All graphs together.png" width="1300"></br></br></br>
+        </div>
+    </div>
+</div>
+
+<div class="jumbotron">
+    <div class="row">
+        <div class="col-md-12 Step text-center">
+            <h1><strong>Using Stepwise Regression, Which Variables are Significant for Total Taxes, Total Taxable Income, and Total Taxes Paid?</strong></h1>
+            <img src="Tables/Significant Variables for all Three Models.jpg"></br></br></br>
+        </div>
+    </div>
+</div>
+
+<!-- <div class="jumbotron">
+        <div class="row">
+            <div class="col-md-6 HWtrain text-center">
+                <h1><strong>HW Forecast for Last 12 Months</strong></h1>
+                <img src="Last 12 Months - HW BG Forecasting.png">
+            </div>
+            <div class="col-md-6 HWtest text-center">
+                <h1><strong>Actual Data for Last 12 Months</strong> </h1>
+                <img src="Last 12 Months - Real Data.png">
+            </div>
+            </div>
+        </div>
+    </div> -->
+
+<script src="Sbrown146.github.io/js/jquery-3.3.1.min.js"></script>
+<script src="Sbrown146.github.io/bootstrap-4.1.3-dist/js/bootstrap.min.js"></script>
+<script src="https://use.fontawesome.com/releases/v5.5.0/js/all/js"></script>
+
+</body>
+</html>

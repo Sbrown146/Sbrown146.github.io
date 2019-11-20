@@ -1,0 +1,24 @@
+.date {
+    margin-top:10px;
+}
+
+th, td {
+    text-align: center;
+    padding: 2px;
+}
+
+tbody>tr:nth-child(even){
+    background-color: #f2f2f2 !important;
+}
+
+tbody>tr:nth-child(odd){
+    background-color: #fff !important;
+}
+
+#plot_guage {
+    max-height: calc(200px + 30px) !important;
+    overflow:hidden;
+    /* background: rgba(0,0,0,0); */
+    /* enable-background: 0px; Figure this out later....*/  
+}
+

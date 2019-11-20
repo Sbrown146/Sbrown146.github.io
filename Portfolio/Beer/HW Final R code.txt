@@ -1,0 +1,95 @@
+require("RPostgreSQL")
+
+con=dbConnect(PostgreSQL(), user="postgres", dbname="BEERSALES", password="postgres", port=5432, host="Localhost")
+
+dbListTables(con)
+
+Beer=dbGetQuery(con, "SELECT * FROM beer_sales")
+
+Beer_split = sort(sample(nrow(Beer_sales), nrow(Beer_sales)*.9375))
+
+train_HW_forecast=forecast:::forecast.HoltWinters(train_HW, h=12)
+
+train_ts=ts(train, frequency=12)
+
+train_components=decompose(train_ts)
+
+train_seasonal=train_ts-train_components$seasonal
+
+train_trend=train_ts-train_components$trend
+
+train_random=train_ts-train_components$random
+
+library("forecast")
+
+plot(train_HW_none$fitted)
+
+plot(train_HW_BG$fitted)
+
+train_HW_none_forecast=forecast:::forecast.HoltWinters(train_HW_none, h=12)
+
+Box.test(train_HW_none_forecast$residuals, lag=20, type="Ljung-Box")
+
+acf(train_HW_none_forecast$residuals, lag.max=20)
+
+train_HW_none_forecast2=forecast(train_HW_none, h=12)
+
+train_HW_none$SSE
+
+train_HW_BG$SSE
+
+train_HW_BG_forecast=forecast:::forecast.HoltWinters(train_HW_BG, h=12)
+
+plot(train_HW_BG_forecast$mean)
+
+diff_none=(test-train_HW_none_forecast$mean)^2
+
+diff_BG=(test-train_HW_BG_forecast$mean)^2
+
+test_ts_array=c(11.1179, 13.0097, 11.8939, 14.2748, 12.512, 16.5611, 15.0629, 12.8391, 16.135, 13.8006, 17.4078)
+
+train_ts_forecast_array=c(12.96459, 12.23409, 12.87677, 12.56645, 14.3196, 13.74399, 15.03477, 15.01811, 14.23545, 15.51, 14.24144)
+
+plot(test_ts_array, type = "o", col="blue")
+
+par(new=TRUE)
+
+plot(train_ts_forecast_array, type = "o", col="red") --Change y axis names
+
+train_ts_diff=diff(train_ts, differences=1)
+
+plot(train_ts_diff, main="First Differences for First 180 Observations", ylab="Train Time Series First Differences")
+
+shapiro.test(train_ts)
+
+shapiro.test(train_ts_diff)
+
+acf(train_ts, main="First 180 Observations ACF")
+
+pacf(train_ts, main="First 180 Observations PACF")
+
+fit=Arima(train_ts, order=c(12,1,4))
+
+require('forecast')
+
+plot(fitted.values(fit), col='blue', main="(12,1,4) vs. Original Data", ylab="Sales", ylim=c(10,18))
+
+arima_forecast_array=c(13.57718,13.2613,13.97568,14.62696,15.84102,15.92655,16.24856,15.72315,15.58546,14.33837,13.90135,13.37557)
+
+plot(arima_forecast_array, type="o", col="red")
+
+par(new=TRUE)
+
+
+
+par(new=TRUE)
+
+plot(train_ts, col='red', main="(12,1,4) vs. Original Data", ylab="Sales", ylim=c(10,18))
+
+legend("bottomright", col=c("blue", "red"), legend=c("Arima(12,1,4) Values", "Original Values"), cex=0.6, lty=1:2)
+
+plot(forecast(fit, h=12))
+
+fit=auto.arima(train_ts)
+
+fit=Arima(train_ts, order=c(7,1,6)) AIC=436.02

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Loan Visualization</title>
+    <link rel="stylesheet" href="https://bootswatch.com/4/spacelab/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/style.css">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-md navbar-dark bg-primary">
+        <a class="navbar-brand" href="https://sbrown146.github.io/Loans/">Visualization Dashboard</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarColor01">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="https://sbrown146.github.io/Loans/">Loans<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://sbrown146.github.io/Stocks/">Stocks</a>
+            </li>
+            <!-- <li class="nav-item">
+              <a class="nav-link" href="#">Insurance</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Other Loans</a>
+            </li> -->
+          </ul>
+        </div>
+      </nav>
+
+      <div class="jumbotron vertical-center" style="width:90%; margin:auto;">
+        <h1 class="display-3"><center>Loan Payment Visualization</center></h1>
+        <p class="lead"><center>Determine the breakeven point for payment and other elements regarding your loan.</center></p>
+        <hr class="my-4">
+        <p><center>Payment due End of Month: Annuity Immediate.</center></p>
+        <p><center>Payment due Start of Month: Annuity Due.</center></p>
+    </div>
+      <div class="container">
+          <div class="row margin-top=50">
+              <div class="col-md-2">
+                <aside class="filters">
+                    <div class="panel panel-default" style="margin-top: 20px; margin-left:-50px;">
+                      <div class="panel-body">
+                            <div class="form-group">
+                                <ul class="list-group" id="filters">
+                                  <li class="filter list-group-item">
+                                    <label class="date" >Loan Value</label>
+                                    <input class="form-control" id="value" type="text" placeholder="150000" onfocus="this.value=''">
+                                    <label class="date">Payment Type:</label>
+                                    <select class="form-control" id="PMT" placeholder="End of Month">
+                                      <option value="End of Month">End of Month</option>
+                                      <option value="Start of Month">Start of Month</option>
+                                    </select>
+                                    <label class="date">Down Payment</label>
+                                    <input class="form-control" id="down_payment" type="text" placeholder="0" onfocus="this.value=''">
+                                    <label class="date" >Number of Years:</label>
+                                    <input class="form-control" id="years" type="text" placeholder="30" onfocus="this.value=''">
+                                    <label class="date" >Payments per Year:</label>
+                                    <input class="form-control" id="per_year" type="text" placeholder="12" onfocus="this.value=''">
+                                    <label class="date" >Interest Rate</label>
+                                    <input class="form-control" id="interest" type="text" placeholder="6" onfocus="this.value=''">
+                                    <button id="filter-btn" type="button" class="btn btn-primary" style="margin-top:10px;">Calculate</button>
+                                    <button id="reset-btn" type="button" class="btn btn-primary" style="margin-top:10px;">Reset</button>
+                                  </li>
+                            </div>
+                        </div>
+                    </div>
+              </div>
+              <div class="col-md-3">
+                  <div class="card text-white bg-primary mb-3" style="max-width: 20rem; margin-top:20px; margin-left:-20px; height:92%;">
+                      <div class="card-header"><center>Loan Details:</center></div>
+                      <div class="card-body">
+                        <p class="card-text" id="loan_value_p">Loan Value:</p>
+                        <p class="card-text" id="PMT_type_p">Payment Type:</p>
+                        <p class="card-text" id="Down_pmt_p">Down Payment:</p>
+                        <p class="card-text" id="years_p">Number of Years:</p>
+                        <p class="card-text" id="payments_p">Payments per Year:</p>
+                        <p class="card-text" id="total_payments_p">Total Payments:</p>
+                        <p class="card-text" id="int_p">Interest Rate:</p>
+                        <p class="card-text" id="PMT_p" style="margin-top:10px;">Payment:</p>
+                        <!-- <p class="card-text" id="sum_pmt_p">Total Amount Paid:</p> -->
+                        <p class="card-text" id="sum_int_p">Total Interest Paid:</p>
+                        <p class="card-text" id="breakeven_p">Breakeven Payment:</p>
+                        <p class="card-text" id="breakeven_75">75% Paid:</p>
+                        <p class="card-text" id="breakeven_50">50% Paid:</p>
+                      </div>
+                    </div>
+              </div>
+              <div class="col-md-7">
+                  <div id="plot_pvi" style="margin-left:-40px; height:100%; width:120%;"></div>
+                </div>
+              </div>
+          </div>
+
+      <div class="container">
+        <div class="row margin-top=50">
+          <div class="col-md-8">
+              <div id="plot_OLB" style="height:90%;"></div>
+          </div>
+          <div class="col-md-4">
+              <div id="plot_guage" style="margin-left:-50px;"></div>
+              <div id="plot_pie" style="margin-left:-40px; margin-top:0px;"></div>
+            </div>
+          </div>
+      </div>
+
+      <div class="container">
+          <div class="row margin-top=50">
+              <div class="col-md-12">
+                <h1><center>Amortization at Breakeven:</center></h1>
+                  <table id="summary-table" class="table table-striped table-inverse" style="margin-top:20px; margin-left:-20px;">
+                    <thead>
+                      <tr>
+                        <th>Payment#</th>
+                        <th>Remaining Balance</th>
+                        <th>Payment</th>
+                        <th>Payment Principal</th>
+                        <th>Payment Interest</th>
+                        <th>Payment Principal%</th>
+                        <th>Payment Interest%</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+          </div>
+
+
+
+    <script src="static/js/app.js"></script> 
+    <script src="https://unpkg.com/simple-statistics@5.0.0/dist/simple-statistics.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  
+</body>
+
+
+</html>
