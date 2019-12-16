@@ -1,0 +1,49 @@
+body{
+    background:url(../images/numbers.jpg);
+    background-size: 1400px 700px;
+    background-attachment: fixed;
+    background-repeat: repeat;
+}
+
+#maingame{
+    margin-top: -70px;
+    text-align: center;
+    color: rgb(0, 55, 255);
+}
+
+#title{
+    font-size: 100px;
+    margin-bottom: 0px;
+
+}
+
+#info{
+    margin-top: 0px;
+    font-size: 30px;
+}
+
+#line-1{
+    font-size: 30px;
+    letter-spacing: 10px;
+    color: rgb(0, 70, 0);
+    font-weight: bold;
+    
+}
+#line-2{
+    font-size: 30px;
+    letter-spacing: 10px;
+    color: rgb(155, 0, 0);
+    font-weight: bold;
+}
+#line-3{
+    font-size: 30px;
+    letter-spacing: 10px;
+    color: rgb(255, 0, 0);
+    font-weight: bold;
+}
+#line-4{
+    font-size: 30px;
+    letter-spacing: 10px;
+    color: rgb(43, 43, 43);
+    font-weight: bold;
+}
