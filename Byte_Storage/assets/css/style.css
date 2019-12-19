@@ -1,0 +1,126 @@
+#headcont{
+    padding: 50px;
+}
+
+#body{
+    background-image: url(../images/motherboard.jif);
+}
+
+#title{
+    width: 100%;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 100px;
+    letter-spacing: 10px;
+    margin-bottom: -10px;
+}
+
+#open{
+    margin-top: 20px;
+    border: 100px, solid, rgb(75, 0, 105);
+}
+
+.titles{
+    text-align: center;
+    background: rgb(0, 173, 72);
+    color: white;
+    font-size: 16px;
+    margin-top: 20px;
+    font-family: 'Orbitron', sans-serif;
+    padding-top: 10px;
+    opacity: .8;
+}
+
+h3{
+    width: 100%;
+    text-align: center;
+    color: white;
+}
+
+#chip-1{
+    margin-top: 15px;
+    background: url(../images/Chip.jif);
+    background-position: center;
+    left: -95px;
+    height: 100px;
+    background-size: contain;
+    margin-right: 25px;
+}
+
+#chip-2{
+    margin-top: 15px;
+    background: url(../images/Chip.jif);
+    background-position: center;
+    left: -80px;
+    height: 100px;
+    background-size: contain;
+    margin-left: -10px;
+}
+
+#chip-3{
+    margin-top: 15px;
+    background: url(../images/Chip.jif);
+    background-position: center;
+    height: 100px;
+    background-size: contain;
+    margin-left: -10px;
+    left: -35px;
+}
+
+#chip-4{
+    margin-top: 15px;
+    background: url(../images/Chip.jif);
+    background-position: center;
+    height: 100px;
+    background-size: contain;
+    margin-left: -10px;
+    left: 5px;
+}
+
+#chip-5{
+    margin-top: 15px;
+    background: url(../images/Chip.jif);
+    background-position: center;
+    height: 100px;
+    background-size: contain;
+    left: 5px;
+}
+
+#chip-6{
+    margin-top: 15px;
+    background: url(../images/Chip.jif);
+    background-position: center;
+    height: 100px;
+    background-size: contain;
+    left: 35px;
+}
+
+#chip-7{
+    margin-top: 15px;
+    background: url(../images/Chip.jif);
+    background-position: center;
+    height: 100px;
+    background-size: contain;
+    left: 70px;
+}
+
+#chip-8{
+    margin-top: 15px;
+    background: url(../images/Chip.jif);
+    background-position: center;
+    height: 100px;
+    background-size: contain;
+    left: 100px;
+}
+
+p{
+    font-family: 'Orbitron', sans-serif;
+    font-size: 20px;
+    color: white;
+}
+
+#directions{
+    font-family: 'Orbitron', sans-serif;
+    margin-left: 0px;
+    padding-left: 0px;
+    color: white;
+}
