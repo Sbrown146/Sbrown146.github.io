@@ -18,7 +18,5 @@ tbody>tr:nth-child(odd){
 #plot_guage {
     max-height: calc(200px + 30px) !important;
     overflow:hidden;
-    /* background: rgba(0,0,0,0); */
-    /* enable-background: 0px; Figure this out later....*/  
 }
 

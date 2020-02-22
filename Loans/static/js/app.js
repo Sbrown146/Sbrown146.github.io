@@ -271,7 +271,7 @@ function Initiate_Search_Button() {
 
     var data = [{ 
         type: 'scatter',
-        x: [0], y:[0],
+        x:[0], y:[0],
         marker: {size: 14, color:'850000'},
         showlegend: false,
         name: 'Breakeven',
@@ -283,7 +283,7 @@ function Initiate_Search_Button() {
     textinfo: 'text',
     textposition:'inside',
     marker: {colors:['rgba(183,28,28, .5)','rgba(249, 168, 37, .5)', 'rgba(110, 154, 22, .5)','rgba(0,0,0,0)']},
-    labels: [`Final ${Math.round($N_given/3)} Years`, `Middle ${Math.round($N_given/3)} Years `, `First ${Math.round($N_given/3)} Years`],
+    labels: [`Final ${Math.round($N_given/3)} Years`, `Middle ${Math.round($N_given/3)} Years `, `First ${Math.round($N_given/3)} Years`, ``],
     hoverinfo: 'label',
     hole: .5,
     type: 'pie',
