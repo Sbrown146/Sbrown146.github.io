@@ -317,7 +317,7 @@ function Initiate_Search_Button() {
   //Pie chart
   var trace3={
       type:"pie",
-      values: [$PV_given, $Total_INT.toFixed(0)],
+      values: [$PV_given - $Dwn_given, $Total_INT.toFixed(0)],
       labels: ['Principal', 'Interest'],
       showlegend: false,
       marker:{
