@@ -1,0 +1,250 @@
+<html>
+<head>
+  <title>Time in Binary</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://bootswatch.com/4/spacelab/bootstrap.min.css">
+  <link rel="stylesheet" href="assets\css\style.css">
+  <link rel="stylesheet" href="assets\css\farbtastic.css" type="text/css"/>
+  <script type='text/javascript' src='assets\js\tinycolor.js'></script>
+</head>
+
+<body id="resizeMarker">
+  <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container-fluid">
+        <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse collapse" id="navbarColor02">
+          <ul class="navbar-nav mr-auto" id="navUl">
+            <li class="nav-item">
+              <div class="custom-control custom-switch clockOnlyColor nav-link">
+                <input type="checkbox" class="custom-control-input" id="clockOnly">
+                <label class="custom-control-label font-weight-normal" for="clockOnly" id="clockOnly">Clock Only</label>
+            </div>
+            </li>
+            <li class="nav-item">
+              <div class="custom-control custom-switch clockOptionsColor nav-link">
+                <input type="checkbox" class="custom-control-input" id="clockOptions">
+                <label class="custom-control-label font-weight-normal" for="clockOptions" id="clockOptions">Options</label>
+            </div>
+            </li>
+            <li class="nav-item">
+              <div class="custom-control custom-switch toolTipColor nav-link">
+                <input type="checkbox" class="custom-control-input" id="toolTip">
+                <label class="custom-control-label font-weight-normal" for="toolTip" id="toolTip">Tooltip</label>
+            </div>
+            </li>
+          </ul>
+      </div>
+    </nav>
+
+
+    <div id="blank"></div>
+    <div id="blank1"></div>
+    <div id="blank2"></div>
+    <div id="blankLeft"></div>
+    <div id="blankRight"></div>
+
+
+    <div id="optionsBar">
+        <div class="panel panel-default">
+          <div class="panel-body" id="leftPanel">
+              <div class="form-group">
+                  <ul class="list-group" id="filters" disabled>
+                      <li class="filter list-group-item" id="filterOptions">
+                          <fieldset>
+                              <legend >Binary Clock Options:</legend>
+                                  <div class="custom-control custom-switch binaryMarkersColor">
+                                      <input type="checkbox" class="custom-control-input" id="binaryMarkers">
+                                      <label class="custom-control-label" for="binaryMarkers">Display Binary Markers</label>
+                                  </div>
+                                  <div class="custom-control custom-switch timeMarkersColor">
+                                      <input type="checkbox" class="custom-control-input" id="timeMarkers">
+                                      <label class="custom-control-label" for="timeMarkers">Display Time Markers</label>
+                                  </div>
+                                  <div class="custom-control custom-switch displayTimeColor">
+                                      <input type="checkbox" class="custom-control-input" id="displayTime">
+                                      <label class="custom-control-label" for="displayTime">Display Time</label>
+                                  </div>
+                                  <div class="form-group militaryColor">
+                                      <h5 style="margin-top: 10px;">12 or 24 Hours:</h5>
+                                      <div class="custom-control custom-radio" style="margin-top: -10px;">
+                                      <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input"  value=12 checked>
+                                      <label class="custom-control-label" for="customRadio1">12 Hours</label>
+                                      </div>
+                                      <div class="custom-control custom-radio">
+                                      <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input" value=24>
+                                      <label class="custom-control-label" for="customRadio2">24 Hours</label>
+                                      </div>
+                                  </div>
+                                  <div class="well" id="colorWell">
+                                      <h5>Preset Colors:</h5>
+                                      <select id="colorSelect" onchange="optionColorSelect(this.value)">
+                                      <option value="clockGreen" style="background-color: #4BF153;" selected>Clock Green</option>
+                                      <option value="multi"  style="background-color: linear-gradient(to right, #24E0FF , #ABFF00, #FF0, #F00);">Multicolor</option>
+                                      <option value="blue" style="background-color:#24E0FF;">Blue</option>
+                                      <option value="green" style="background-color:#ABFF00;">Green</option>
+                                      <option value="yellow" style="background-color:#FF0;">Yellow</option>
+                                      <option value="red" style="background-color:#F00;">Red</option>
+                                      <option value="purple" style="background-color: rgb(183, 0, 255);">Purple</option>
+                                      <option value="orange" style="background-color: rgb(255, 166, 0);">Orange</option>
+                                      <option value="grey" style="background-color: rgb(187, 187, 187);">Grey</option>
+                                      <option value="custom" style="background-color: linear-gradient(to right, #4BF153 , #323232);">Custom</option>
+                                      </select>
+                                  </div>
+                                  <h5 style="margin-top: 10px;">Choose Custom On/Off Colors:</h5>
+                                  <form action="" id="wheelId" style="width: 500px;">
+                                      <div class="form-item"><label for="color1">On Color:</label><input type="text" id="color1" name="color1" class="colorwell" value="#4BF153"/></div>
+                                      <div class="form-item"><label for="color2">Off Color:</label><input type="text" id="color2" name="color2" class="colorwell" value="#323232"/></div>
+                                      <div id="picker"></div>
+                                  </form>
+                          </fieldset
+                      </li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+    </div>
+
+
+    <div id="toolTipPanel">
+      <div class="panel panel-default">
+        <div class="panel-body">
+            <div class="form-group">
+                <ul class="list-group">
+                    <li class="filter list-group-item" id="filterToolTip">
+                        <fieldset>
+                            <h5>How To Read A Binary Clock:</h5>
+                            <p style="font-size: 13px; margin-top: 0px;">LEDs represents 2 to some power with the first being 2<sup>0</sup> (1), the second 2<sup>1</sup> (2), the third 2<sup>2</sup> (4) and the last 2<sup>3</sup> (8).</p>
+                            <div class="row" style="margin-top: -35px;">
+                                <div class="col-md-6" id="led-div">
+                                    <div class="led-box-demo">
+                                        <div class="led-blank"></div>
+                                        <div class="led-clockGreen-on" id="minutes14d"></div>
+                                        <div class="led-clockGreen-off" id="minutes12d"></div>
+                                        <div class="led-clockGreen-off" id="minutes11d"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6" id="led-div">
+                                    <div class="led-box-demo">
+                                        <div class="led-clockGreen-off" id="minutes28d"></div>
+                                        <div class="led-clockGreen-on" id="minutes24d"></div>
+                                        <div class="led-clockGreen-on" id="minutes22d"></div>
+                                        <div class="led-clockGreen-off" id="minutes21d"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Default for minute demo -->
+                            <p id="minutesDemo">0 + 0 = 0<br>Minutes</p>
+                            <p style="font-size: 13px;" id="demoText1">For minutes, no LEDs are on which is 0.</p>
+                            <p style="font-size: 13px;" id="demoText2">For seconds, no LEDs are on which is 0.</p>
+                            <p style="font-size: 13px;" id="demoText3">Combining these two together will yield 0 + 0 = 0 minutes.</p>
+                        </fieldset
+                    </li>
+                </ul>
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="binaryMarkers">
+      <h3 id="numbers0">DAY</h3>
+      <h3 id="numbers8">2<sup>3</sup>=8</h3>
+      <h3 id="numbers4">2<sup>2</sup>=4</h3>
+      <h3 id="numbers2">2<sup>1</sup>=2</h3>
+      <h3 id="numbers1">2<sup>0</sup>=1</h3>
+    </div>
+
+    <div id="hours1">
+      <div class="led-clockGreen-on" id="dayOfWeek0"></div>
+      <div class="led-blank"></div>
+      <div class="led-clockGreen-on" id="hours14"></div>
+      <div class="led-clockGreen-on" id="hours12"></div>
+      <div class="led-clockGreen-on" id="hours11"></div>
+    </div>
+
+    <div id="hours2">
+      <div class="led-clockGreen-on" id="dayOfWeek1"></div>
+      <div class="led-clockGreen-on" id="hours28"></div>
+      <div class="led-clockGreen-on" id="hours24"></div>
+      <div class="led-clockGreen-on" id="hours22"></div>
+      <div class="led-clockGreen-on" id="hours21"></div>
+    </div>
+
+    <div id="minutes1">
+      <div class="led-clockGreen-on" id="dayOfWeek2"></div>
+      <div class="led-blank"></div>
+      <div class="led-clockGreen-on" id="minutes14"></div>
+      <div class="led-clockGreen-on" id="minutes12"></div>
+      <div class="led-clockGreen-on" id="minutes11"></div>
+    </div>
+    
+    <div id="minutes2">
+      <div class="led-clockGreen-on" id="dayOfWeek3"></div>
+      <div class="led-clockGreen-on" id="minutes28"></div>
+      <div class="led-clockGreen-on" id="minutes24"></div>
+      <div class="led-clockGreen-on" id="minutes22"></div>
+      <div class="led-clockGreen-on" id="minutes21"></div>
+    </div>
+
+    <div id="seconds1">
+      <div class="led-clockGreen-on" id="dayOfWeek4"></div>
+      <div class="led-blank"></div>
+      <div class="led-clockGreen-on" id="seconds14"></div>
+      <div class="led-clockGreen-on" id="seconds12"></div>
+      <div class="led-clockGreen-on" id="seconds11"></div>
+    </div>
+
+    <div id="seconds2">
+      <div class="led-clockGreen-on" id="dayOfWeek5"></div>
+      <div class="led-clockGreen-on" id="seconds28"></div>
+      <div class="led-clockGreen-on" id="seconds24"></div>
+      <div class="led-clockGreen-on" id="seconds22"></div>
+      <div class="led-clockGreen-on" id="seconds21"></div>
+    </div>
+
+    <div id="dayColumns">
+      <div class="led-clockGreen-on" id="dayOfWeek6"></div>
+      <div class="led-blank"></div>
+      <div class="led-blank"></div>
+      <div class="led-blank"></div>
+      <div class="led-clockGreen-on" id="amPmId"></div>
+    </div>
+
+    <div id="hoursMath">
+      <h3 id="h3HoursMath">1 + 2 = 12</h3>
+    </div>
+    <div id="minutesMath">
+      <h3 id="h3MinutesMath">0 + 0 = 0</h3>
+    </div>
+    <div id="secondsMath">
+      <h3 id="h3SecondsMath">0 + 0 = 0</h3>
+    </div>
+    <div id="amPm">
+      <h3 id="h3AmPm">PM</h3>
+    </div>
+
+    <div id="hours">Hours</div>
+    <div id="minutes">Minutes</div>
+    <div id="seconds">Seconds</div>
+    <div id="nightDay">Am/Pm</div>
+
+    <div id="timeDisplay">
+      <h1 id="h1Time">12:00:00</h1>
+    </div>
+    <div id="blankLeft"></div>
+    <div id="dayDisplay">
+      <h1 id="h1Day">WEDNESDAY</h1>
+    </div>
+    <div id="blankRight"></div>
+
+  </div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" ></script>
+<script type="text/javascript" src="assets/js/farbtastic.js"></script>
+<script src="assets/js/clock.js"></script>
+</html>
